@@ -1,0 +1,1 @@
+This repository is dedicated to the abstract design of classes, communication standards, and other concepts. 
