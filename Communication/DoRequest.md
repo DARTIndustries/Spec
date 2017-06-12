@@ -49,7 +49,7 @@ It is the job of the Robot to translate this vector into speed and direction for
 ```json
 {
     "Do": {
-	    "Vector": {
+	    "MotorVector": {
 	        "X": 127,
 	        "Y": 0,
 	        "Z": 0
@@ -66,13 +66,42 @@ I want to be able to provide either the angle `[0, 180]` for each servo, or prov
 
 ### Example
 
+#### Direct Angle Set
 ```json
 {
     "Do": {
-        "Servo": [ 0, 180, 19, 15, 6 ]
+        "Servo": {
+            "Angles": [ 0, 180, 19, 15, 6 ]
+        }
     }
 }
 ```
+
+#### Velocity Set
+```json
+{
+    "Do": {
+        "Servo": {
+            "Velocity": [ 0, 0, 0, -5, 0 ]
+        }
+    }
+}
+```
+
+#### Mixed Set
+```json
+{
+    "Do": {
+        "Servo": {
+            "Angles": [ 0, 180, 19, 15, 6 ],
+            "Velocity": [ 0, 0, 0, -5, 0 ]
+        }
+    }
+}
+```
+
+
+
 
 ## Lights
 
@@ -109,5 +138,48 @@ Currently the Request node has no commands, but is instead an array of strings t
 ```json
 {
     "Request": [ "SEN1", "SEN2", "SEN3" ]
+}
+```
+
+# Complete Examples
+
+## Direct
+
+```json
+{
+    "Do": {
+        "Motor": [ 127, 127, -126, -126, 127, 127 ],
+
+        "Lights": "#FF00FF",
+
+        "Servo": {
+            "Angles": [ 0, 180, 19, 15, 6 ],
+            "Velocity": [ 0, 0, 0, -5, 0 ]
+        }
+    },
+    "Request": [ "TEMP", "GYRO", "ACEL", "COMP", "Pressure" ]
+}
+```
+
+## Indirect
+
+```json
+{
+    "Do": {
+
+        "MotorVector": {
+	        "X": 127,
+	        "Y": 0,
+	        "Z": 0
+	    },
+
+        "Lights": "#FF00FF",
+
+        "Servo": {
+            "Angles": [ 0, 180, 19, 15, 6 ],
+            "Velocity": [ 0, 0, 0, -5, 0 ]
+        }
+    },
+    "Request": [ "TEMP", "GYRO", "ACEL", "COMP", "PRES" ]
 }
 ```
