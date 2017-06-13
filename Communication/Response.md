@@ -14,7 +14,7 @@ Contrary to this, the only time a `Response` message is to be sent to the Contro
 
 ```
 {
-	"Response": {
+    "Response": {
         "Id": "123456",
         "TEMP": 98.6,
         "GYRO": {
@@ -29,7 +29,7 @@ Contrary to this, the only time a `Response` message is to be sent to the Contro
         }, 
         "COMP": 278.15, 
         "PRES": 15.5
-	},
+    },
     "Message": [
         {
             "Header": {
