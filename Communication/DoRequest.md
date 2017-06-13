@@ -123,6 +123,8 @@ Color can be set with a HTML/CSS compliant color string.
 
 Currently the Request node has no commands, but is instead an array of strings that refer to what elements are being requested of the Robot. The Robot is expected to respond back to with all information requested. See the spec for `Response`
 
+*If* a request provides an Id, the same Id number will be sent back as a ResponseId in the `Response` Message. Note that this field is optional.
+
 ### Sensor Codes
 
 | **Sensor**    | **Code** |
@@ -137,7 +139,10 @@ Currently the Request node has no commands, but is instead an array of strings t
 
 ```json
 {
-    "Request": [ "SEN1", "SEN2", "SEN3" ]
+    "Request": {
+        "Id": 123456,
+        "Fields": [ "TEMP", "GYRO", "ACEL", "COMP", "PRES" ]
+    }
 }
 ```
 
@@ -157,7 +162,10 @@ Currently the Request node has no commands, but is instead an array of strings t
             "Velocity": [ 0, 0, 0, -5, 0 ]
         }
     },
-    "Request": [ "TEMP", "GYRO", "ACEL", "COMP", "Pressure" ]
+    "Request": {
+        "Id": 123456,
+        "Fields": [ "TEMP", "GYRO", "ACEL", "COMP", "PRES" ]
+    }
 }
 ```
 
@@ -180,6 +188,9 @@ Currently the Request node has no commands, but is instead an array of strings t
             "Velocity": [ 0, 0, 0, -5, 0 ]
         }
     },
-    "Request": [ "TEMP", "GYRO", "ACEL", "COMP", "PRES" ]
+    "Request": {
+        "Id": 123456,
+        "Fields": [ "TEMP", "GYRO", "ACEL", "COMP", "PRES" ]
+    }
 }
 ```
