@@ -102,6 +102,50 @@ I want to be able to provide either the angle `[0, 180]` for each servo, or prov
 
 
 
+## Camera
+
+**ToDo:** This spec should include two possibility of controlling servos. 
+
+I want to be able to provide either the angle `[0, 180]` for each servo, or provide a velocity in `deg/sec` that the servo should spin at.
+
+### Example
+
+#### Direct Angle Set
+```json
+{
+    "Do": {
+        "Camera": {
+            "Angles": [ 0, 180 ]
+        }
+    }
+}
+```
+
+#### Velocity Set
+```json
+{
+    "Do": {
+        "Camera": {
+            "Velocity": [ 0, 0 ]
+        }
+    }
+}
+```
+
+#### Mixed Set
+```json
+{
+    "Do": {
+        "Servo": {
+            "Angles": [ 0, 180 ],
+            "Velocity": [ 0, 0 ]
+        }
+    }
+}
+```
+
+
+
 
 ## Lights
 
