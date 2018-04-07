@@ -229,8 +229,8 @@ Currently the Request node has no commands, but is instead an array of strings t
 {
     "Do": {
         "MovementVector": {
-	        "X": 127,   // forward
-	        "Y": 0,     // right
+	        "X": 127,   // right
+	        "Y": 0,     // forward
 	        "Z": 0      // up
 	},
 	
