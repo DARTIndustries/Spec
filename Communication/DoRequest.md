@@ -191,7 +191,7 @@ Currently the Request node has no commands, but is instead an array of strings t
 
 ### Example
 
-```json
+```json5
 {
     "Request": {
         "Id": 123456,
@@ -204,7 +204,7 @@ Currently the Request node has no commands, but is instead an array of strings t
 
 ## Direct
 
-```json
+```json5
 {
     "Do": {
         "Motor": [ 127, 127, -126, -126, 127, 127 ],
@@ -225,7 +225,7 @@ Currently the Request node has no commands, but is instead an array of strings t
 
 ## Indirect
 
-```json
+```json5
 {
     "Do": {
         "MovementVector": {
