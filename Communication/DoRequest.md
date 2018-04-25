@@ -15,7 +15,8 @@ Each command's example will show what category it belongs to.
 ```json
 {
     "Do": { ... },
-    "Request": { ... }
+    "Request": { ... },
+    "Config": { ... }
 }
 ```
 
@@ -144,8 +145,17 @@ I want to be able to provide either the angle `[0, 180]` for each servo, or prov
 }
 ```
 
-
-
+## Claw
+```json
+{
+    "Do": {
+        "Servo": {
+            "Angles": [ 180 ],
+            "Velocity": [ 0 ]
+        }
+    }
+}
+```
 
 ## Lights
 
@@ -181,7 +191,7 @@ Currently the Request node has no commands, but is instead an array of strings t
 
 ### Example
 
-```json
+```json5
 {
     "Request": {
         "Id": 123456,
@@ -194,7 +204,7 @@ Currently the Request node has no commands, but is instead an array of strings t
 
 ## Direct
 
-```json
+```json5
 {
     "Do": {
         "Motor": [ 127, 127, -126, -126, 127, 127 ],
@@ -215,15 +225,20 @@ Currently the Request node has no commands, but is instead an array of strings t
 
 ## Indirect
 
-```json
+```json5
 {
     "Do": {
-
-        "MotorVector": {
-	        "X": 127,
-	        "Y": 0,
-	        "Z": 0
-	    },
+        "MovementVector": {
+	        "X": 127,   // right
+	        "Y": 0,     // forward
+	        "Z": 0      // up
+	},
+	
+        "AngularVelocity": {
+	        "X": 127,   // pitch
+	        "Y": 0,     // roll
+	        "Z": 0      // yaw
+	},
 
         "Lights": "#FF00FF",
 
@@ -232,9 +247,17 @@ Currently the Request node has no commands, but is instead an array of strings t
             "Velocity": [ 0, 0, 0, -5, 0 ]
         }
     },
+    
     "Request": {
         "Id": 123456,
         "Fields": [ "TEMP", "GYRO", "ACEL", "COMP", "PRES" ]
+    },
+    
+    "Config": {
+        "maintainHeading": true,   // Default = true
+	"maintainDrift": true,
+	
+	"zeroGyro": false  //WARNING -- this resets the gyro. Only call with true when not moving
     }
 }
 ```
