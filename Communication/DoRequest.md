@@ -243,9 +243,12 @@ Currently the Request node has no commands, but is instead an array of strings t
 
         "Lights": "#FF00FF",
 
-        "Servo": {
-            "Angles": [ 0, 180, 19, 15, 6 ],
-            "Velocity": [ 0, 0, 0, -5, 0 ]
+        "Claw": {
+            "Angle": 0
+        },
+	
+	"Camera": {
+            "Angles": [0, 180]
         }
     },
     
