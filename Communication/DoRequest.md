@@ -228,16 +228,17 @@ Currently the Request node has no commands, but is instead an array of strings t
 ```json5
 {
     "Do": {
-        "MovementVector": {
-	        "X": 127,   // right
-	        "Y": 0,     // forward
-	        "Z": 0      // up
-	},
-	
-        "AngularVelocity": {
-	        "X": 127,   // pitch
-	        "Y": 0,     // roll
-	        "Z": 0      // yaw
+        "MotorVector": {
+            "Velocity": {
+	            "X": 127,   // right
+	            "Y": 0,     // forward
+	            "Z": 0      // up
+	    },
+            "AngularVelocity": {
+	            "X": 127,   // pitch
+	            "Y": 0,     // roll
+	            "Z": 0      // yaw
+	    }
 	},
 
         "Lights": "#FF00FF",
