@@ -247,6 +247,10 @@ Currently the Request node has no commands, but is instead an array of strings t
             "Angle": 0
         },
 	
+        "Buzzer": {
+            "State": True
+        },
+	
 	"Camera": {
             "Angles": [0, 180]
         }
